@@ -23,7 +23,7 @@ pipeline {
                 
                  sh "echo '2nd proj built'"
             }
-            }
+            
         }
     }
 }
