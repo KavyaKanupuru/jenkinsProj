@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        // Install the Maven version configured as "M3" and add it to the path.
+        
         maven "M3"
     }
 
@@ -13,13 +13,13 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/KavyaKanupuru/JenkinsTest2.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                sh "mvn -Dmaven.test.failure.ignore=true package"
                 
                 sh "echo 'first proj is built'"
                 
                 git branch: 'main', url: 'https://github.com/KavyaKanupuru/JenkinsTest1.git'
 
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                sh "mvn -Dmaven.test.failure.ignore=true package"
                 
                  sh "echo '2nd proj built'"
             }
